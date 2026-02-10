@@ -7,7 +7,7 @@ Imaginary part of the cross spectrum of band 1 vs. band 2 (IM)
 
 The .xcm file for the [constant phase-lags model](https://github.com/EdNathan/CompactObjects3D/blob/main/MM_tutorial/RXTE_GRS_1915%2B105/mm_constant_phase_lag.xcm) uses a linear combination of Lorentzians to fit PS1 and PS2 and a combination of Lorentzians multiplied by the cosine (sine) of a parameter (the phase lag) to fit the RE (IM) part of the cross spectrum.
 
-The .xcm file for the [constant time-lags model[(https://github.com/EdNathan/CompactObjects3D/blob/main/MM_tutorial/RXTE_GRS_1915%2B105/mm_constant_time_lag.xcm) uses a linear combination of Lorentzians to fit PS1 and PS2 and a combination of Lorentzians multiplied by the cosine (sine) of a parameter (the time lag) times 2 \pi the frequency (in Xspec the energy) to fit the RE (IM) part of the cross spectrum.
+The .xcm file for the [constant time-lags model](https://github.com/EdNathan/CompactObjects3D/blob/main/MM_tutorial/RXTE_GRS_1915%2B105/mm_constant_time_lag.xcm) uses a linear combination of Lorentzians to fit PS1 and PS2 and a combination of Lorentzians multiplied by the cosine (sine) of a parameter (the time lag) times 2 \pi the frequency (in Xspec the energy) to fit the RE (IM) part of the cross spectrum.
 
 Both .xcm files also read the phase-lag (PL) spectrum and the coherence function (CF)
 and compute the derived model of these two on the basis of the model fitted to
