@@ -1,0 +1,74 @@
+Script for Lotentz Centre tutorial
+
+Example will be for a June 2024 IXPE observation of Cyg X-1, obsid 03010101.
+
+***************************************************************************************
+0. Initialize HEASOFT
+
+
+***************************************************************************************
+1. Make a power spectrum and a cross spectrum between DUs.
+a) Set parameters inside pow_co_spec.f90
+b) Compile and run
+gfortran -L$HEADAS/lib -lcfitsio pow_co_spec.f90
+./a.out
+c) Outputs:
+Praw.dat:	Power vs frequency (no binning, no Poisson noise
+	  	subtraction) alongside the Poisson noise (deadtime-affected) model.
+Pbin.dat:	Binned noise subtracted copower (black) and power
+		(red) vs frequency.
+fPbin.dat	Same as Pbin.dat, except y-axis is multiplied by frequency.
+xPbin.dat	Same as Pbin.dat, except in xspec format.
+
+To convert xPbin.dat into a pha file that can be loaded into XSPEC:
+flx2xsp infile=xPbin.dat phafile=xPbin.pha rspfile=xPbin.rsp
+
+
+***************************************************************************************
+2. Create level 1.5 event files (optional - provide `oven ready' version)
+a) Create level 1.5 directory
+cd  CygX1data/03010101/
+mkdir event_1pt5
+b) Set parameters inside spurcor.f90
+c) Compile and run
+gfortran -L$HEADAS/lib -lcfitsio spurcor.f90
+./a.out
+d) Outputs
+delta.dat	Roll angle vs time
+Level 1.5 event files
+
+
+***************************************************************************************
+3. Analytic background
+Blackboard
+
+
+***************************************************************************************
+4. Calculate rms and phase lag as a function of modulation angle
+a) Set parameters inside co_vs_phi.f90. Includes evtlist file that
+includes a list of the event files to use in the code.
+b) Compile and run
+gfortran -L$HEADAS/lib -lcfitsio co_vs_phi.f90
+./a.out
+c) Outputs
+rate_vs_phi.dat		Count rate vs modulation angle
+ReG_ImG_vs_phi.dat	ReG and ImG vs modulation angle. Red = full model,
+		    	    	       	blue = constant PD and PA. Constant = null null hypothesis
+rms_lag_vs_phi.dat		rms and lag vs modulation angle. Red = full model,
+		    	    	       	grey = constant PD and PA.
+xReG_ImG_vs_phi.dat	XSPEC format rms vs modulation angle
+xrms_lag_vs_phi.dat	XSPEC format lag vs modulation angle
+
+
+***************************************************************************************
+5. Calculate G_Q and G_U as a function of frequency
+a) Set parameters inside co_vs_phi.f90. Includes evtlist file that
+includes a list of the event files to use in the code.
+b) Compile and run
+gfortran -L$HEADAS/lib -lcfitsio co_vs_phi_freq.f90
+./a.out
+c) Outputs			
+ReImGQ_vs_freq.dat	ReGQ (black) and ImGQ (red) vs freq plus null hypothesis.
+ReImGU_vs_freq.dat	ReGU (black) and ImGU (red) vs freq plus null hypothesis.
+P_vs_freq.dat		     	Co-power (black) and power (red) vs freq.
+

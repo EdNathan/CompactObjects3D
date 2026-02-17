@@ -1,0 +1,134 @@
+Suite of polarimetry-timing routines
+
+************************************************************************
+Dependencies
+- Fortran compiler
+- Initiallized HEASOFT installation (e.g. heainit)
+- Working IXPE CALDB
+************************************************************************
+
+************************************************************************
+All use the common modules and subroutines in
+a_modules.f90
+a_subroutines.f90
+************************************************************************
+
+------------------------------------------------------------------------
+spurcor.f90
+
+Compile:
+gfortran -L$HEADAS/lib -lcfitsio spurcor.f90
+
+Run:
+./a.out
+
+Description:
+Reads in level 1 and level 2 event files and the spurous modulation
+maps, and uses these to calculate the modulation angle in the sky
+frame for each event. Writes out a new level "1.5" event file.
+
+Use:
+User needs to create a level 1.5 event file directory. Code is run by
+editing the parameters at the top of the source code, then compiling
+and running. If you want to apply a source region, filter the level 2
+files (no need to do the level 1 files).
+
+Outputs:
+Level 1.5 event files (fits format). Name and location of files
+specified by the user.
+delta.dat plots the roll angle for each DU vs time.
+
+------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
+pow_co_spec.f90
+
+Compile:
+gfortran -L$HEADAS/lib -lcfitsio pow_co_spec.f90
+
+Run:
+./a.out
+
+Description:
+Extracts a light curve in a given energy band and calculates the power spectrum and co-spectrum.
+It bins both geometrically. For co-spectrum, one light curve is from
+the sum of two DUs and the other is from the remaining DU. The exact
+configuration is set by the parameter config. 
+
+Use:
+Code is run by editing the parameters at the top of the source code,
+then compiling and running.
+
+Outputs:
+Praw.dat:	Power vs frequency (no binning, no Poisson noise
+	  	subtraction) alongside the Poisson noise (deadtime-affected) model.
+Pbin.dat:	Binned noise subtracted copower (black) and power
+		(red) vs frequency.
+fPbin.dat	Same as Pbin.dat, except y-axis is multiplied by frequency.
+xPbin.dat	Same as Pbin.dat, except in xspec format.
+
+To convert xPbin.dat into a pha file that can be loaded into XSPEC:
+flx2xsp infile=xPbin.dat phafile=xPbin.pha rspfile=xPbin.rsp
+
+------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
+co_vs_phi.f90
+
+Compile:
+gfortran -L$HEADAS/lib -lcfitsio co_vs_phi.f90
+
+Run:
+./a.out
+
+Description:
+Extracts subject band (phi-selected) light curves from two DUs and a
+reference band from a third DU (set by config parameter), then
+calculates cross spectrum in a given frequency range as a function of
+phi. Enables stacking over multiple obsids.
+
+Use:
+xxxxxxxxxxxxxxxxx
+
+ Outputs:
+ fort.86: ReG and ImG vs modulation angle
+ fort.85: rms and lag vs modulation angle
+ fort.180: XSPEC format rms vs modulation angle
+ fort.181: XSPEC format lag vs modulation angle
+
+Currently outputting ReG(phi) and ImG(phi) in units of RMS^2/Hz, but I
+think I need to multiply by (fhi-flo) to make it compatible with my
+reconstruction code.
+*** Download co_vs_phi_lore.f90 and sinfunc.f90 at Heathrow ***
+------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
+phase-diff.f90
+
+Calculates the phase difference between QPO harmonics using the
+auto-bispectrum method of Nathan et al (2022).
+------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
+reconstruct.f90
+
+Reconstructs I, Q and U vs QPO phase from a best fitting model to
+counts vs phi, G(1,phi) and G(2,phi), plus a phase difference between
+harmonics.
+
+*** Currently randomly dividing some things by 9 and not sure why ***
+*** Look into sinfunc.f90 to understand normalisations ***
+
+To use:
+1) Run co_vs_phi.f90 setting flo and fhi as the QPO fundemental range
+2) Run flx2xsp for count rate vs phi and cross spectrum vs phi.
+3) Run co_vs_phi.f90 setting flo and fhi as the QPO overtone range
+
+create pha files for count rate, G1 and G2 as a function of
+phi using co_vs_phi.f90 and flx2xsp
+
+------------------------------------------------------------------------
