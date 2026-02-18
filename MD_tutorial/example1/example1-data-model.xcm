@@ -1,0 +1,71 @@
+model none
+data none
+setplot del all
+query yes
+
+data 1:1  ixpe01250401_det1_evt2_v03_I-30bins.pha
+data 1:2  ixpe01250401_det1_evt2_v03_Q-30bins.pha
+data 1:3  ixpe01250401_det1_evt2_v03_U-30bins.pha
+
+data 2:4  ixpe01250401_det2_evt2_v03_I-30bins.pha
+data 2:5  ixpe01250401_det2_evt2_v03_Q-30bins.pha
+data 2:6  ixpe01250401_det2_evt2_v03_U-30bins.pha
+
+data 3:7  ixpe01250401_det3_evt2_v03_I-30bins.pha
+data 3:8  ixpe01250401_det3_evt2_v03_Q-30bins.pha
+data 3:9  ixpe01250401_det3_evt2_v03_U-30bins.pha
+
+setplot energy
+ignore *:**-2.,8.01-**
+
+model  constant(pollin*TBabs*diskbb)
+              1      -0.01          0          0      1e+10      1e+10
+      0.0312801       0.01          0          0          1          1
+       0.014437       0.01         -5         -5          5          5
+         17.852       0.01        -90        -90         90         90
+              0      -0.01         -5         -5          5          5
+        8.31344      0.001          0          0     100000      1e+06
+        1.40968       0.01          0          0       1000       1000
+          188.6       0.01          0          0      1e+20      1e+24
+        1.04126       0.01          0          0      1e+10      1e+10
+= p2
+= p3
+= p4
+= p5
+= p6
+= p7
+= p8
+         1.0256       0.01          0          0      1e+10      1e+10
+= p2
+= p3
+= p4
+= p5
+= p6
+= p7
+= p8
+
+setplot co time off
+setplot command csize 2
+setplot command lw 5
+setplot command lw 5 on 1..99
+
+setplot co label top "plot eufs for I, Q, U"
+setplot command r y 1e-4 2
+cpd eufs-model.eps/cps
+pl lda
+cpd /null
+
+setplot co label top "plot polfrac"
+setplot command r y 0. 0.25
+setplot command log off
+cpd polfrac-model.eps/cps
+pl polfrac
+cpd /null
+
+setplot co label top "plot polangle"
+setplot command r y -30. 90.
+cpd polang-model.eps/cps
+pl polangle
+cpd /null
+
+exit

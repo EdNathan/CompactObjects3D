@@ -1,0 +1,27 @@
+# let's set the directory with the tables
+# note that the directory definition should NOT end with a slash!
+#set STOKESDIR /home/dovciak/data
+set STOKESDIR .
+# let's define the tables to be used (e.g. the full ones or the reduced ones)
+set UNPOL stokes_unpol-v2.fits
+set VRPOL stokes_vrpol-v2.fits
+set 45POL stokes_45deg-v2.fits
+set UNPISO stokes_unpol_iso-v2.fits
+# define the STOKES polarisation models, see Podgorny et al. (2022), Podgorny (2023)
+mdefine stunp atable{$STOKESDIR/$UNPOL}(PhoIndex, Xi, cosd(Thetai), Phi, cosd(Thetae), z) : add
+mdefine stvrp atable{$STOKESDIR/$VRPOL}(PhoIndex, Xi, cosd(Thetai), Phi, cosd(Thetae), z) : add
+mdefine st45d atable{$STOKESDIR/$45POL}(PhoIndex, Xi, cosd(Thetai), Phi, cosd(Thetae), z) : add
+mdefine stiso atable{$STOKESDIR/$UNPISO}(PhoIndex, Xi, cosd(Thetae), z) : add
+mdefine stpol stunp(PhoIndex, Xi, Thetai, Phi, Thetae, z)+PolFrac*((stvrp(PhoIndex, Xi, Thetai, Phi, Thetae, z)-stunp(PhoIndex, Xi, Thetai, Phi, Thetae, z))) : add
+mdefine stokes stunp(PhoIndex, Xi, Thetai, Phi, Thetae, z)+PolFrac*((stvrp(PhoIndex, Xi, Thetai, Phi, Thetae, z)-stunp(PhoIndex, Xi, Thetai, Phi, Thetae, z))*cosd(2*PolAng)+(st45d(PhoIndex, Xi, Thetai, Phi, Thetae, z)-stunp(PhoIndex, Xi, Thetai, Phi, Thetae, z)*sind(2*PolAng))) : add
+#
+# define the STOKES polarisation models for black-body reflection
+set UNPOLBB stokesBB_unpol-v2.fits
+set VRPOLBB stokesBB_vrpol-v2.fits
+set 45POLBB stokesBB_45deg-v2.fits
+#
+mdefine stBBunp atable{$STOKESDIR/$UNPOLBB}(kT, Xi, cosd(Thetai), Phi, cosd(Thetae), z) : add
+mdefine stBBvrp atable{$STOKESDIR/$VRPOLBB}(kT, Xi, cosd(Thetai), Phi, cosd(Thetae), z) : add
+mdefine stBB45d atable{$STOKESDIR/$45POLBB}(kT, Xi, cosd(Thetai), Phi, cosd(Thetae), z) : add
+mdefine stBBpol stBBunp(kT, Xi, Thetai, Phi, Thetae, z)+PolFrac*((stBBvrp(kT, Xi, Thetai, Phi, Thetae, z)-stBBunp(kT, Xi, Thetai, Phi, Thetae, z))) : add
+mdefine stokesBB stBBunp(kT, Xi, Thetai, Phi, Thetae, z)+PolFrac*((stBBvrp(kT, Xi, Thetai, Phi, Thetae, z)-stBBunp(kT, Xi, Thetai, Phi, Thetae, z))*cosd(2*PolAng)+(stBB45d(kT, Xi, Thetai, Phi, Thetae, z)-stBBunp(kT, Xi, Thetai, Phi, Thetae, z)*sind(2*PolAng))) : add

@@ -1,0 +1,321 @@
+
+		XSPEC version: 12.15.1
+	Build Date/Time: Sun Oct 12 16:45:57 2025
+
+
+Executing script file "example1-data-model.xcm" ...
+
+
+!XSPEC12>model none
+
+!XSPEC12>data none
+
+!XSPEC12>setplot del all
+
+!XSPEC12>query yes
+
+!XSPEC12>data 1:1  ixpe01250401_det1_evt2_v03_I-30bins.pha
+Warning: RMF or ARF STOKESWT keyword (ALPHA075SIMPLE) is not consistent with that in spectrum (SIMPLE)
+
+1 spectrum  in use
+ 
+Spectral Data File: ixpe01250401_det1_evt2_v03_I-30bins.pha  Spectrum 1
+Net count rate (cts/s) for Spectrum:1  2.599e+00 +/- 1.629e-03
+ Assigned to Data Group 1 and Plot Group 1
+  Noticed Channels:  1-195
+  Telescope: IXPE Instrument: GPD  Channel Type: PI
+  Exposure Time: 4.585e+05 sec
+  Filtering Keys: 
+    Stokes: 0
+ Using fit statistic: chi
+ Using Response (RMF) File            ixpe_d1_20170101_alpha075_02.rmf for Source 1
+ Using Auxiliary Response (ARF) File  ixpe01250401_det1_evt2_v03.arf
+
+
+!XSPEC12>data 1:2  ixpe01250401_det1_evt2_v03_Q-30bins.pha
+Warning: RMF or ARF STOKESWT keyword (ALPHA075SIMPLE) is not consistent with that in spectrum (SIMPLE)
+
+2 spectra  in use
+ 
+Spectral Data File: ixpe01250401_det1_evt2_v03_Q-30bins.pha  Spectrum 2
+Net count rate (cts/s) for Spectrum:2  6.706e-02 +/- 2.303e-03
+ Assigned to Data Group 1 and Plot Group 2
+  Noticed Channels:  1-195
+  Telescope: IXPE Instrument: GPD  Channel Type: PI
+  Exposure Time: 4.585e+05 sec
+  Filtering Keys: 
+    Stokes: 1
+ Using fit statistic: chi
+ Using Response (RMF) File            ixpe_d1_20170101_alpha075_02.rmf for Source 1
+ Using Auxiliary Response (ARF) File  ixpe01250401_det1_evt2_v03.mrf
+
+
+!XSPEC12>data 1:3  ixpe01250401_det1_evt2_v03_U-30bins.pha
+Warning: RMF or ARF STOKESWT keyword (ALPHA075SIMPLE) is not consistent with that in spectrum (SIMPLE)
+
+3 spectra  in use
+ 
+Spectral Data File: ixpe01250401_det1_evt2_v03_U-30bins.pha  Spectrum 3
+Net count rate (cts/s) for Spectrum:3  4.233e-02 +/- 2.303e-03
+ Assigned to Data Group 1 and Plot Group 3
+  Noticed Channels:  1-195
+  Telescope: IXPE Instrument: GPD  Channel Type: PI
+  Exposure Time: 4.585e+05 sec
+  Filtering Keys: 
+    Stokes: 2
+ Using fit statistic: chi
+ Using Response (RMF) File            ixpe_d1_20170101_alpha075_02.rmf for Source 1
+ Using Auxiliary Response (ARF) File  ixpe01250401_det1_evt2_v03.mrf
+
+
+!XSPEC12>data 2:4  ixpe01250401_det2_evt2_v03_I-30bins.pha
+Warning: RMF or ARF STOKESWT keyword (ALPHA075SIMPLE) is not consistent with that in spectrum (SIMPLE)
+
+4 spectra  in use
+ 
+Spectral Data File: ixpe01250401_det2_evt2_v03_I-30bins.pha  Spectrum 4
+Net count rate (cts/s) for Spectrum:4  2.458e+00 +/- 1.596e-03
+ Assigned to Data Group 2 and Plot Group 4
+  Noticed Channels:  1-195
+  Telescope: IXPE Instrument: GPD  Channel Type: PI
+  Exposure Time: 4.581e+05 sec
+  Filtering Keys: 
+    Stokes: 0
+ Using fit statistic: chi
+ Using Response (RMF) File            ixpe_d2_20170101_alpha075_02.rmf for Source 1
+ Using Auxiliary Response (ARF) File  ixpe01250401_det2_evt2_v03.arf
+
+
+!XSPEC12>data 2:5  ixpe01250401_det2_evt2_v03_Q-30bins.pha
+Warning: RMF or ARF STOKESWT keyword (ALPHA075SIMPLE) is not consistent with that in spectrum (SIMPLE)
+
+5 spectra  in use
+ 
+Spectral Data File: ixpe01250401_det2_evt2_v03_Q-30bins.pha  Spectrum 5
+Net count rate (cts/s) for Spectrum:5  6.033e-02 +/- 2.256e-03
+ Assigned to Data Group 2 and Plot Group 5
+  Noticed Channels:  1-195
+  Telescope: IXPE Instrument: GPD  Channel Type: PI
+  Exposure Time: 4.581e+05 sec
+  Filtering Keys: 
+    Stokes: 1
+ Using fit statistic: chi
+ Using Response (RMF) File            ixpe_d2_20170101_alpha075_02.rmf for Source 1
+ Using Auxiliary Response (ARF) File  ixpe01250401_det2_evt2_v03.mrf
+
+
+!XSPEC12>data 2:6  ixpe01250401_det2_evt2_v03_U-30bins.pha
+Warning: RMF or ARF STOKESWT keyword (ALPHA075SIMPLE) is not consistent with that in spectrum (SIMPLE)
+
+6 spectra  in use
+ 
+Spectral Data File: ixpe01250401_det2_evt2_v03_U-30bins.pha  Spectrum 6
+Net count rate (cts/s) for Spectrum:6  4.575e-02 +/- 2.256e-03
+ Assigned to Data Group 2 and Plot Group 6
+  Noticed Channels:  1-195
+  Telescope: IXPE Instrument: GPD  Channel Type: PI
+  Exposure Time: 4.581e+05 sec
+  Filtering Keys: 
+    Stokes: 2
+ Using fit statistic: chi
+ Using Response (RMF) File            ixpe_d2_20170101_alpha075_02.rmf for Source 1
+ Using Auxiliary Response (ARF) File  ixpe01250401_det2_evt2_v03.mrf
+
+
+!XSPEC12>data 3:7  ixpe01250401_det3_evt2_v03_I-30bins.pha
+Warning: RMF or ARF STOKESWT keyword (ALPHA075SIMPLE) is not consistent with that in spectrum (SIMPLE)
+
+7 spectra  in use
+ 
+Spectral Data File: ixpe01250401_det3_evt2_v03_I-30bins.pha  Spectrum 7
+Net count rate (cts/s) for Spectrum:7  2.458e+00 +/- 1.602e-03
+ Assigned to Data Group 3 and Plot Group 7
+  Noticed Channels:  1-195
+  Telescope: IXPE Instrument: GPD  Channel Type: PI
+  Exposure Time: 4.578e+05 sec
+  Filtering Keys: 
+    Stokes: 0
+ Using fit statistic: chi
+ Using Response (RMF) File            ixpe_d3_20170101_alpha075_02.rmf for Source 1
+ Using Auxiliary Response (ARF) File  ixpe01250401_det3_evt2_v03.arf
+
+
+!XSPEC12>data 3:8  ixpe01250401_det3_evt2_v03_Q-30bins.pha
+Warning: RMF or ARF STOKESWT keyword (ALPHA075SIMPLE) is not consistent with that in spectrum (SIMPLE)
+
+8 spectra  in use
+ 
+Spectral Data File: ixpe01250401_det3_evt2_v03_Q-30bins.pha  Spectrum 8
+Net count rate (cts/s) for Spectrum:8  6.535e-02 +/- 2.265e-03
+ Assigned to Data Group 3 and Plot Group 8
+  Noticed Channels:  1-195
+  Telescope: IXPE Instrument: GPD  Channel Type: PI
+  Exposure Time: 4.578e+05 sec
+  Filtering Keys: 
+    Stokes: 1
+ Using fit statistic: chi
+ Using Response (RMF) File            ixpe_d3_20170101_alpha075_02.rmf for Source 1
+ Using Auxiliary Response (ARF) File  ixpe01250401_det3_evt2_v03.mrf
+
+
+!XSPEC12>data 3:9  ixpe01250401_det3_evt2_v03_U-30bins.pha
+Warning: RMF or ARF STOKESWT keyword (ALPHA075SIMPLE) is not consistent with that in spectrum (SIMPLE)
+
+9 spectra  in use
+ 
+Spectral Data File: ixpe01250401_det3_evt2_v03_U-30bins.pha  Spectrum 9
+Net count rate (cts/s) for Spectrum:9  5.067e-02 +/- 2.265e-03
+ Assigned to Data Group 3 and Plot Group 9
+  Noticed Channels:  1-195
+  Telescope: IXPE Instrument: GPD  Channel Type: PI
+  Exposure Time: 4.578e+05 sec
+  Filtering Keys: 
+    Stokes: 2
+ Using fit statistic: chi
+ Using Response (RMF) File            ixpe_d3_20170101_alpha075_02.rmf for Source 1
+ Using Auxiliary Response (ARF) File  ixpe01250401_det3_evt2_v03.mrf
+
+
+!XSPEC12>setplot energy
+
+!XSPEC12>ignore *:**-2.,8.01-**
+    30 channels (1-30) ignored in spectrum #     1
+    30 channels (1-30) ignored in spectrum #     2
+    30 channels (1-30) ignored in spectrum #     3
+    30 channels (1-30) ignored in spectrum #     4
+    30 channels (1-30) ignored in spectrum #     5
+    30 channels (1-30) ignored in spectrum #     6
+    30 channels (1-30) ignored in spectrum #     7
+    30 channels (1-30) ignored in spectrum #     8
+    30 channels (1-30) ignored in spectrum #     9
+   135 channels (61-195) ignored in spectrum #     1
+   135 channels (61-195) ignored in spectrum #     2
+   135 channels (61-195) ignored in spectrum #     3
+   135 channels (61-195) ignored in spectrum #     4
+   135 channels (61-195) ignored in spectrum #     5
+   135 channels (61-195) ignored in spectrum #     6
+   135 channels (61-195) ignored in spectrum #     7
+   135 channels (61-195) ignored in spectrum #     8
+   135 channels (61-195) ignored in spectrum #     9
+
+
+!XSPEC12>model  constant(pollin*TBabs*diskbb)  ;                1      -0.01          0          0      1e+10      1e+10  ;        0.0312801       0.01          0          0          1          1  ;         0.014437       0.01         -5         -5          5          5  ;           17.852       0.01        -90        -90         90         90  ;                0      -0.01         -5         -5          5          5  ;          8.31344      0.001          0          0     100000      1e+06  ;          1.40968       0.01          0          0       1000       1000  ;            188.6       0.01          0          0      1e+20      1e+24  ;          1.04126       0.01          0          0      1e+10      1e+10  ;  = p2  ;  = p3  ;  = p4  ;  = p5  ;  = p6  ;  = p7  ;  = p8  ;           1.0256       0.01          0          0      1e+10      1e+10  ;  = p2  ;  = p3  ;  = p4  ;  = p5  ;  = p6  ;  = p7  ;  = p8
+
+========================================================================
+Model constant<1>(pollin<2>*TBabs<3>*diskbb<4>) Source No.: 1   Active/On
+Model Model Component  Parameter  Unit     Value
+ par  comp
+                           Data group: 1
+   1    1   constant   factor              1.00000      frozen
+   2    2   pollin     A1                  3.12801E-02  +/-  0.0          
+   3    2   pollin     Aslope              1.44370E-02  +/-  0.0          
+   4    2   pollin     psi1       deg      17.8520      +/-  0.0          
+   5    2   pollin     psislope            0.0          frozen
+   6    3   TBabs      nH         10^22    8.31344      +/-  0.0          
+   7    4   diskbb     Tin        keV      1.40968      +/-  0.0          
+   8    4   diskbb     norm                188.600      +/-  0.0          
+                           Data group: 2
+   9    1   constant   factor              1.04126      +/-  0.0          
+  10    2   pollin     A1                  3.12801E-02  = p2
+  11    2   pollin     Aslope              1.44370E-02  = p3
+  12    2   pollin     psi1       deg      17.8520      = p4
+  13    2   pollin     psislope            0.0          = p5
+  14    3   TBabs      nH         10^22    8.31344      = p6
+  15    4   diskbb     Tin        keV      1.40968      = p7
+  16    4   diskbb     norm                188.600      = p8
+                           Data group: 3
+  17    1   constant   factor              1.02560      +/-  0.0          
+  18    2   pollin     A1                  3.12801E-02  = p2
+  19    2   pollin     Aslope              1.44370E-02  = p3
+  20    2   pollin     psi1       deg      17.8520      = p4
+  21    2   pollin     psislope            0.0          = p5
+  22    3   TBabs      nH         10^22    8.31344      = p6
+  23    4   diskbb     Tin        keV      1.40968      = p7
+  24    4   diskbb     norm                188.600      = p8
+________________________________________________________________________
+
+
+Fit statistic  : Chi-Squared                  270.28     using 30 bins, spectrum 1, group 1.
+                 Chi-Squared                   22.54     using 30 bins, spectrum 2, group 1.
+                 Chi-Squared                   28.78     using 30 bins, spectrum 3, group 1.
+                 Chi-Squared                  232.06     using 30 bins, spectrum 4, group 2.
+                 Chi-Squared                   47.55     using 30 bins, spectrum 5, group 2.
+                 Chi-Squared                   20.62     using 30 bins, spectrum 6, group 2.
+                 Chi-Squared                  206.93     using 30 bins, spectrum 7, group 3.
+                 Chi-Squared                   57.73     using 30 bins, spectrum 8, group 3.
+                 Chi-Squared                   37.44     using 30 bins, spectrum 9, group 3.
+Total fit statistic                           923.93     with 262 d.o.f.
+
+Test statistic : Chi-Squared                  923.93     using 270 bins.
+ Null hypothesis probability of 1.27e-74 with 262 degrees of freedom
+ Current data and model not fit yet.
+
+!XSPEC12>setplot co time off
+
+!XSPEC12>setplot command csize 2
+
+!XSPEC12>setplot command lw 5
+
+!XSPEC12>setplot command lw 5 on 1..99
+
+!XSPEC12>setplot co label top "plot eufs for I, Q, U"
+
+!XSPEC12>setplot command r y 1e-4 2
+
+!XSPEC12>cpd eufs-model.eps/cps
+
+!XSPEC12>pl lda
+
+!XSPEC12>plot lda
+***Warning: Fit is not current.
+
+!XSPEC12>cpd /null
+
+!XSPEC12>setplot co label top "plot polfrac"
+
+!XSPEC12>setplot command r y 0. 0.25
+
+!XSPEC12>setplot command log off
+
+!XSPEC12>cpd polfrac-model.eps/cps
+
+!XSPEC12>pl polfrac
+
+!XSPEC12>plot polfrac
+***Warning: Fit is not current.
+
+!XSPEC12>cpd /null
+
+!XSPEC12>setplot co label top "plot polangle"
+
+!XSPEC12>setplot command r y -30. 90.
+
+!XSPEC12>cpd polang-model.eps/cps
+
+!XSPEC12>pl polangle
+
+!XSPEC12>plot polangle
+***Warning: Fit is not current.
+
+!XSPEC12>cpd /null
+
+!XSPEC12>exit
+ XSPEC: quit
+
+!XSPEC12>tclexit
+tbvabs Version 2.3
+Cosmic absorption with grains and H2, modified from
+Wilms, Allen, & McCray, 2000, ApJ 542, 914-924
+Questions: Joern Wilms
+joern.wilms@sternwarte.uni-erlangen.de
+joern.wilms@fau.de
+
+http://pulsar.sternwarte.uni-erlangen.de/wilms/research/tbabs/
+
+PLEASE NOTICE:
+To get the model described by the above paper
+you will also have to set the abundances:
+   abund wilm
+
+Note that this routine ignores the current cross section setting
+as it always HAS to use the Verner cross sections as a baseline.

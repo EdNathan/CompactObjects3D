@@ -1,0 +1,50 @@
+
+		XSPEC version: 12.15.1
+	Build Date/Time: Sun Oct 12 16:45:57 2025
+
+
+Executing script file "example2-data.xcm" ...
+
+
+!XSPEC12>model none
+
+!XSPEC12>data none
+
+!XSPEC12>setplot del all
+
+!XSPEC12>query yes
+
+!XSPEC12>data 1  ixpe02009101_det1_evt2_v01_I-11bins.pha
+Error: cannot read spectrum file ixpe02009101_det1_evt2_v01_I-11bins.pha
+
+!XSPEC12>data 2  ixpe02009101_det2_evt2_v01_I-11bins.pha
+Error: cannot read spectrum file ixpe02009101_det2_evt2_v01_I-11bins.pha
+
+!XSPEC12>data 3  ixpe02009101_det3_evt2_v01_I-11bins.pha
+Error: cannot read spectrum file ixpe02009101_det3_evt2_v01_I-11bins.pha
+
+!XSPEC12>data 4  ixpe02009101_det1_evt2_v01_Q-11bins.pha
+Error: cannot read spectrum file ixpe02009101_det1_evt2_v01_Q-11bins.pha
+
+!XSPEC12>data 5  ixpe02009101_det2_evt2_v01_Q-11bins.pha
+Error: cannot read spectrum file ixpe02009101_det2_evt2_v01_Q-11bins.pha
+
+!XSPEC12>data 6  ixpe02009101_det3_evt2_v01_Q-11bins.pha
+Error: cannot read spectrum file ixpe02009101_det3_evt2_v01_Q-11bins.pha
+
+!XSPEC12>data 7  ixpe02009101_det1_evt2_v01_U-11bins.pha
+Error: cannot read spectrum file ixpe02009101_det1_evt2_v01_U-11bins.pha
+
+!XSPEC12>data 8  ixpe02009101_det2_evt2_v01_U-11bins.pha
+Error: cannot read spectrum file ixpe02009101_det2_evt2_v01_U-11bins.pha
+
+!XSPEC12>data 9  ixpe02009101_det3_evt2_v01_U-11bins.pha
+Error: cannot read spectrum file ixpe02009101_det3_evt2_v01_U-11bins.pha
+
+!XSPEC12>setplot energy
+
+!XSPEC12>ignore *:**-2.,8.01-**
+
+***XSPEC Error:  no data loaded 
+XSPEC12>
+ XSPEC: quit
